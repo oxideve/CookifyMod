@@ -1,5 +1,9 @@
 {
   "item.cookify.tomato": "Tomato",
+  "item.cookify.tomato_seeds": "Tomato Seeds",
+  "item.cookify.orange_seeds": "Orange Seeds",
+  "item.cookify.orange": "Orange",
+  "item.cookify.mush_porcini": "Porcini Mushroom",
 
   "block.cookify.testblock": "Test Block",
   "block.cookify.deseeder": "Deseeder"

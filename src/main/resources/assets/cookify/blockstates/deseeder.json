@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cookify:block/deseeder"
+    }
+  }
+}

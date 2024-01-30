@@ -16,6 +16,7 @@ import org.oxideve.cookify.block.ModBlocks;
 import org.oxideve.cookify.block.entity.ModBlockEntities;
 import org.oxideve.cookify.item.ModCreativeTabs;
 import org.oxideve.cookify.item.ModItems;
+import org.oxideve.cookify.recipe.ModRecipes;
 import org.oxideve.cookify.screen.DeseederScreen;
 import org.oxideve.cookify.screen.ModMenuTypes;
 import org.slf4j.Logger;
@@ -37,6 +38,7 @@ public class Cookify
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

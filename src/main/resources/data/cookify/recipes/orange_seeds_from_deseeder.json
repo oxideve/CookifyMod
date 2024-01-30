@@ -1,0 +1,12 @@
+{
+  "type": "cookify:deseeder",
+  "ingredients": [
+    {
+      "item": "cookify:orange"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "cookify:orange_seeds"
+  }
+}

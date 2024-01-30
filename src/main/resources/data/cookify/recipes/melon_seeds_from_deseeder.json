@@ -1,0 +1,12 @@
+{
+  "type": "cookify:deseeder",
+  "ingredients": [
+    {
+      "item": "minecraft:melon_slice"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "minecraft:melon_seeds"
+  }
+}

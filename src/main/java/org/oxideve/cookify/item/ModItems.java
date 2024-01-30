@@ -14,7 +14,15 @@ public class ModItems {
     public static final RegistryObject<Item> TOMATO = ITEMS.register("tomato",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ORANGE = ITEMS.register("orange",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MUSH_PORCINI = ITEMS.register("mush_porcini",
+            () -> new Item(new Item.Properties()));
+
+
     public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ORANGE_SEEDS = ITEMS.register("orange_seeds",
             () -> new Item(new Item.Properties()));
 
 

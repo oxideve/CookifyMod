@@ -21,9 +21,6 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Cookify.MOD_ID);
 
-    public static final RegistryObject<Block> TESTBLOCK = registerBlock("testblock",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANVIL)));
-
     public static final RegistryObject<Block> DESEEDER = registerBlock("deseeder",
             () -> new DeseederBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 

@@ -21,18 +21,31 @@ public class ModCreativeTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModItems.TOMATO.get());
+                        pOutput.accept(ModItems.ORANGE.get());
+                        pOutput.accept(ModItems.MUSH_PORCINI.get());
 
 
                     })
                     .build());
 
     public static final RegistryObject<CreativeModeTab> COOKIFYTAB2 = CREATIVE_MODE_TABS.register("cookify_tab2",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.TESTBLOCK.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.DESEEDER.get()))
                     .title(Component.literal("Cookify Machines"))
                     .displayItems((pParameters, pOutput) -> {
 
-                        pOutput.accept(ModBlocks.TESTBLOCK.get());
                         pOutput.accept(ModBlocks.DESEEDER.get());
+
+
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> COOKIFYTAB3 = CREATIVE_MODE_TABS.register("cookify_tab3",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TOMATO_SEEDS.get()))
+                    .title(Component.literal("Cookify Seeds"))
+                    .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(ModItems.TOMATO_SEEDS.get());
+                        pOutput.accept(ModItems.ORANGE_SEEDS.get());
 
 
                     })

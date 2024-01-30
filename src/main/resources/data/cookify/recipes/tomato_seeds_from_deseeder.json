@@ -1,0 +1,12 @@
+{
+  "type": "cookify:deseeder",
+  "ingredients": [
+    {
+      "item": "cookify:tomato"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "cookify:tomato_seeds"
+  }
+}
