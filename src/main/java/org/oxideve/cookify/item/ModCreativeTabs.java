@@ -34,6 +34,7 @@ public class ModCreativeTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModBlocks.DESEEDER.get());
+                        pOutput.accept(ModBlocks.SEED_ENHANCER.get());
 
 
                     })

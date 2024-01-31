@@ -20,6 +20,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<DeseederMenu>> DESEEDER_MENU =
             registerMenuTypes("deseeder_menu", DeseederMenu::new);
 
+    public static final RegistryObject<MenuType<SeedEnhancerMenu>> SEEDENHANCER_MENU =
+            registerMenuTypes("seed_enhancer_menu", SeedEnhancerMenu::new);
+
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuTypes(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

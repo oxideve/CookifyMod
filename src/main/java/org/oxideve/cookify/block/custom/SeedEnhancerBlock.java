@@ -1,6 +1,7 @@
 package org.oxideve.cookify.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -24,16 +25,19 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
-import org.oxideve.cookify.block.entity.DeseederBlockEntity;
 import org.oxideve.cookify.block.entity.ModBlockEntities;
+import org.oxideve.cookify.block.entity.SeedEnhancerBlockEntity;
 
-public class DeseederBlock extends BaseEntityBlock implements EntityBlock {
+
+public class SeedEnhancerBlock extends BaseEntityBlock implements EntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0,16, 16, 16);
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
 
-    public DeseederBlock(Properties pProperties) {
+    public SeedEnhancerBlock(Properties pProperties) {
         super(pProperties);
+        registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.SOUTH));
     }
+
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -55,8 +59,8 @@ public class DeseederBlock extends BaseEntityBlock implements EntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof DeseederBlockEntity) {
-                ((DeseederBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof SeedEnhancerBlockEntity) {
+                ((SeedEnhancerBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -66,8 +70,8 @@ public class DeseederBlock extends BaseEntityBlock implements EntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof DeseederBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (DeseederBlockEntity)entity, pPos);
+            if (entity instanceof SeedEnhancerBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), (SeedEnhancerBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -79,18 +83,7 @@ public class DeseederBlock extends BaseEntityBlock implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new DeseederBlockEntity(pPos, pState);
-    }
-
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if(pLevel.isClientSide()) {
-            return null;
-        }
-
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.DESEEDER_BE.get(),
-                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+        return new SeedEnhancerBlockEntity(pPos, pState);
     }
 
     @Override

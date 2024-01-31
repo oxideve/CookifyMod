@@ -19,6 +19,7 @@ import org.oxideve.cookify.item.ModItems;
 import org.oxideve.cookify.recipe.ModRecipes;
 import org.oxideve.cookify.screen.DeseederScreen;
 import org.oxideve.cookify.screen.ModMenuTypes;
+import org.oxideve.cookify.screen.SeedEnhancerScreen;
 import org.slf4j.Logger;
 
 @Mod(Cookify.MOD_ID)
@@ -71,6 +72,7 @@ public class Cookify
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             MenuScreens.register(ModMenuTypes.DESEEDER_MENU.get(), DeseederScreen::new);
+            MenuScreens.register(ModMenuTypes.SEEDENHANCER_MENU.get(), SeedEnhancerScreen::new);
         }
     }
 }

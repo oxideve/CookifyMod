@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "facing=north":
+    {
+      "model": "cookify:block/seed_enhancer",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "cookify:block/seed_enhancer",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "cookify:block/seed_enhancer",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "cookify:block/seed_enhancer",
+      "y": 90
+    }
+  }
+}

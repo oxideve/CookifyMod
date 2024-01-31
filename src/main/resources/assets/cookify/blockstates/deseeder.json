@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "cookify:block/deseeder"
+    "facing=north":
+    {
+      "model": "cookify:block/deseeder",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "cookify:block/deseeder",
+      "y":90
+    },
+    "facing=south": {
+      "model": "cookify:block/deseeder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cookify:block/deseeder",
+      "y": 270
     }
   }
 }
