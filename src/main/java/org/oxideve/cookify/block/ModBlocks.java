@@ -28,7 +28,7 @@ public class ModBlocks {
             () -> new FloraReactorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
-            () -> new BlueberriesCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+            () -> new BlueberriesCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission().noLootTable()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

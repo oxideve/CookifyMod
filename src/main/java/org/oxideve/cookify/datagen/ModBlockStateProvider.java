@@ -17,14 +17,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        simpleBlockWithItem(ModBlocks.DESEEDER.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/deseeder")));
-
-        simpleBlockWithItem(ModBlocks.FLORA_REACTOR.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/flora_reactor")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    @Override
+    public void simpleBlock(Block block) {
+        super.simpleBlock(block);
     }
 }

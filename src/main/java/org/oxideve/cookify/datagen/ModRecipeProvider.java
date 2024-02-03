@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.oxideve.cookify.block.ModBlocks;
+import org.oxideve.cookify.item.ModItems;
 
 import java.util.function.Consumer;
 
@@ -25,6 +26,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('I', Items.IRON_INGOT)
                 .define('B', Items.BONE_MEAL)
                 .define('D', Items.DIRT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
     }
 }
