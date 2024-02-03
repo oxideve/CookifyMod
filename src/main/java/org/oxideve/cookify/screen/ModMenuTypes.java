@@ -4,14 +4,12 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.network.IContainerFactory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.oxideve.cookify.Cookify;
 
-import java.awt.*;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
@@ -20,8 +18,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<DeseederMenu>> DESEEDER_MENU =
             registerMenuTypes("deseeder_menu", DeseederMenu::new);
 
-    public static final RegistryObject<MenuType<SeedEnhancerMenu>> SEEDENHANCER_MENU =
-            registerMenuTypes("seed_enhancer_menu", SeedEnhancerMenu::new);
+    public static final RegistryObject<MenuType<FloraReactorMenu>> FLORA_REACTOR_MENU =
+            registerMenuTypes("flora_reactor_menu", FloraReactorMenu::new);
+
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuTypes(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

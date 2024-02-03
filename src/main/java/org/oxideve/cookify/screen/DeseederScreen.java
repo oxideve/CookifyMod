@@ -20,7 +20,6 @@ public class DeseederScreen extends AbstractContainerScreen<DeseederMenu> {
     protected void init() {
         super.init();
         this.inventoryLabelY = 10000;
-        this.titleLabelY = 10000;
     }
 
     @Override

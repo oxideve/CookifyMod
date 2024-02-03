@@ -1,0 +1,12 @@
+{
+  "type": "cookify:florareactor",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
+    }
+  ],
+  "output": {
+    "count": 5,
+    "item": "minecraft:oak_sapling"
+  }
+}

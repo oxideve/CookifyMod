@@ -10,23 +10,23 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import org.oxideve.cookify.block.ModBlocks;
-import org.oxideve.cookify.block.entity.SeedEnhancerBlockEntity;
+import org.oxideve.cookify.block.entity.FloraReactorBlockEntity;
 
-public class SeedEnhancerMenu extends AbstractContainerMenu {
+public class FloraReactorMenu extends AbstractContainerMenu {
 
-    public final SeedEnhancerBlockEntity blockEntity;
+    public final FloraReactorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
 
-    public SeedEnhancerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public FloraReactorMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public SeedEnhancerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.SEEDENHANCER_MENU.get(), pContainerId);
+    public FloraReactorMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.FLORA_REACTOR_MENU.get(), pContainerId);
         checkContainerSize(inv, 2);
-        blockEntity = (((SeedEnhancerBlockEntity) entity));
+        blockEntity = (((FloraReactorBlockEntity) entity));
         this.level = inv.player.level();
         this.data = data;
 
@@ -120,6 +120,6 @@ public class SeedEnhancerMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.SEED_ENHANCER.get());
+                pPlayer, ModBlocks.FLORA_REACTOR.get());
     }
 }

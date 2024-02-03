@@ -17,10 +17,10 @@ public class ModBlockEntities{
                     BlockEntityType.Builder.of(DeseederBlockEntity::new,
                             ModBlocks.DESEEDER.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<SeedEnhancerBlockEntity>> SEED_ENHANCER_BE =
-            BLOCK_ENTITIES.register("seed_enhancer_be", () ->
-                    BlockEntityType.Builder.of(SeedEnhancerBlockEntity::new,
-                            ModBlocks.SEED_ENHANCER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<FloraReactorBlockEntity>> FLORA_REACTOR_BE =
+            BLOCK_ENTITIES.register("flora_reactor_be", () ->
+                    BlockEntityType.Builder.of(FloraReactorBlockEntity::new,
+                            ModBlocks.FLORA_REACTOR.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

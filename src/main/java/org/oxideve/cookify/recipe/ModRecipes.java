@@ -13,9 +13,9 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<DeseederRecipe>> DESEEDER_SERIALIZER =
             SERIALIZERS.register("deseeder", () -> DeseederRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<FloraReactorRecipe>> FLORAREACTOR_SERIALIZER =
+            SERIALIZERS.register("florareactor", () -> FloraReactorRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<SeedEnhancerRecipe>> SEED_ENHANCER_SERIALIZER =
-            SERIALIZERS.register("seed_enhancer", () -> SeedEnhancerRecipe.Serializer.INSTANCE);
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

@@ -9,11 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.oxideve.cookify.Cookify;
 
-public class SeedEnhancerScreen extends AbstractContainerScreen<SeedEnhancerMenu> {
+public class FloraReactorScreen extends AbstractContainerScreen<FloraReactorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Cookify.MOD_ID, "textures/gui/seedenhancer_gui.png");
-
-    public SeedEnhancerScreen(SeedEnhancerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+            new ResourceLocation(Cookify.MOD_ID, "textures/gui/florareactor_gui.png");
+    public FloraReactorScreen(FloraReactorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 
@@ -21,8 +20,6 @@ public class SeedEnhancerScreen extends AbstractContainerScreen<SeedEnhancerMenu
     protected void init() {
         super.init();
         this.inventoryLabelY = 10000;
-        this.titleLabelX = (imageWidth - font.width(this.title)) / 2;
-        //this.titleLabelY = imageHeight / 2;
     }
 
     @Override
@@ -35,21 +32,12 @@ public class SeedEnhancerScreen extends AbstractContainerScreen<SeedEnhancerMenu
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        renderProgressBar(guiGraphics, x, y);
+        renderProgressArrow(guiGraphics, x, y);
     }
 
-    private void renderProgressBar(GuiGraphics guiGraphics, int x, int y) {
-        if (menu.isCrafting()) {
-            int barWidth = 55; // Lunghezza della barra
-            int barHeight = 6; // Altezza della barra
-            int progressWidth = menu.getScaledProgress(); // Lunghezza della barra in base al progresso
-
-            // Calcola le coordinate x e y della barra
-            int barX = 59; // Posizione x della barra (angolo alto sinistro)
-            int barY = 39; // Posizione y della barra (angolo alto sinistro)
-
-            // Disegna la barra
-            guiGraphics.blit(TEXTURE, x + barX, y + barY, 176, 0, progressWidth, barHeight);
+    private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
+        if(menu.isCrafting()) {
+            guiGraphics.blit(TEXTURE, x + 59, y + 39, 176, 0, menu.getScaledProgress(), 7);
         }
     }
 

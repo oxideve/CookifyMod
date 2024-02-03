@@ -2,19 +2,19 @@
   "variants": {
     "facing=north":
     {
-      "model": "cookify:block/seed_enhancer",
+      "model": "cookify:block/flora_reactor",
       "y": 180
     },
     "facing=east": {
-      "model": "cookify:block/seed_enhancer",
+      "model": "cookify:block/flora_reactor",
       "y": 270
     },
     "facing=south": {
-      "model": "cookify:block/seed_enhancer",
+      "model": "cookify:block/flora_reactor",
       "y": 0
     },
     "facing=west": {
-      "model": "cookify:block/seed_enhancer",
+      "model": "cookify:block/flora_reactor",
       "y": 90
     }
   }

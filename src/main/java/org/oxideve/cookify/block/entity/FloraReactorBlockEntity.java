@@ -14,11 +14,8 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -26,12 +23,12 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.oxideve.cookify.recipe.SeedEnhancerRecipe;
-import org.oxideve.cookify.screen.SeedEnhancerMenu;
+import org.oxideve.cookify.recipe.FloraReactorRecipe;
+import org.oxideve.cookify.screen.FloraReactorMenu;
 
 import java.util.Optional;
 
-public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider {
+public class FloraReactorBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(2);
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
@@ -43,14 +40,14 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
     private int maxProgress = 78;
 
 
-    public SeedEnhancerBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.SEED_ENHANCER_BE.get(), pPos, pBlockState);
+    public FloraReactorBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntities.FLORA_REACTOR_BE.get(), pPos, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
                 return switch (pIndex) {
-                    case 0 -> SeedEnhancerBlockEntity.this.progress;
-                    case 1 -> SeedEnhancerBlockEntity.this.maxProgress;
+                    case 0 -> FloraReactorBlockEntity.this.progress;
+                    case 1 -> FloraReactorBlockEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -58,8 +55,8 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
             @Override
             public void set(int pIndex, int pValue) {
                 switch (pIndex) {
-                    case 0 -> SeedEnhancerBlockEntity.this.progress = pValue;
-                    case 1 -> SeedEnhancerBlockEntity.this.maxProgress = pValue;
+                    case 0 -> FloraReactorBlockEntity.this.progress = pValue;
+                    case 1 -> FloraReactorBlockEntity.this.maxProgress = pValue;
                 }
             }
 
@@ -102,34 +99,32 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("Seed Enhancer");
+        return Component.literal("Flora Reactor");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new SeedEnhancerMenu(pContainerId, pPlayerInventory, this, this.data);
+        return new FloraReactorMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
 
         pTag.put("inventory", itemHandler.serializeNBT());
-        pTag.putInt("seed_enhancer.progress", progress);
+        pTag.putInt("flora_reactor.progress", progress);
         super.saveAdditional(pTag);
     }
-
-
 
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
-        progress = pTag.getInt("seed_enhancer.progress");
+        progress = pTag.getInt("flora_reactor.progress");
     }
 
 
-    public void tick2(Level pLevel, BlockPos pPos, BlockState pState) {
+    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         if(hasRecipe()) {
             increaseCraftingProgress();
             setChanged(pLevel, pPos, pState);
@@ -148,7 +143,7 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private void craftItem() {
-        Optional<SeedEnhancerRecipe> recipe = getCurrentRecipe();
+        Optional<FloraReactorRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
 
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
@@ -158,7 +153,7 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasRecipe() {
-        Optional<SeedEnhancerRecipe> recipe = getCurrentRecipe();
+        Optional<FloraReactorRecipe> recipe = getCurrentRecipe();
 
             if(recipe.isEmpty()) {
                 return false;
@@ -169,13 +164,13 @@ public class SeedEnhancerBlockEntity extends BlockEntity implements MenuProvider
         return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
     }
 
-    private Optional<SeedEnhancerRecipe> getCurrentRecipe() {
+    private Optional<FloraReactorRecipe> getCurrentRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
 
         for(int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
-        return this.level.getRecipeManager().getRecipeFor(SeedEnhancerRecipe.Type.INSTANCE, inventory, level);
+        return this.level.getRecipeManager().getRecipeFor(FloraReactorRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
