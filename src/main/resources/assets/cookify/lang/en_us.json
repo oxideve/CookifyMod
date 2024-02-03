@@ -1,9 +1,17 @@
 {
-  "item.cookify.tomato": "Tomato",
   "item.cookify.tomato_seeds": "Tomato Seeds",
   "item.cookify.orange_seeds": "Orange Seeds",
+  "item.cookify.blueberry_seeds": "Blueberry Seeds",
+
+
+
+
+  "item.cookify.tomato": "Tomato",
   "item.cookify.orange": "Orange",
+  "item.cookify.blueberry": "Blueberry",
   "item.cookify.mush_porcini": "Porcini Mushroom",
+
+
 
   "block.cookify.deseeder": "Deseeder",
   "block.cookify.flora_reactor": "Flora Reactor"

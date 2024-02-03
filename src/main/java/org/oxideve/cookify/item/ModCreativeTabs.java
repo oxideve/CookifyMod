@@ -22,7 +22,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.TOMATO.get());
                         pOutput.accept(ModItems.ORANGE.get());
                         pOutput.accept(ModItems.MUSH_PORCINI.get());
-
+                        pOutput.accept(ModItems.BLUEBERRY.get());
 
                     })
                     .build());
@@ -33,7 +33,7 @@ public class ModCreativeTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModBlocks.DESEEDER.get());
-
+                        pOutput.accept(ModBlocks.FLORA_REACTOR.get());
 
 
                     })
@@ -46,6 +46,7 @@ public class ModCreativeTabs {
 
                         pOutput.accept(ModItems.TOMATO_SEEDS.get());
                         pOutput.accept(ModItems.ORANGE_SEEDS.get());
+                        pOutput.accept(ModItems.BLUEBERRY_SEEDS.get());
 
 
                     })

@@ -2,6 +2,7 @@ package org.oxideve.cookify.block;
 
 import org.oxideve.cookify.Cookify;
 //import org.oxideve.cookify.block.custom.DeseederBlock;
+import org.oxideve.cookify.block.custom.BlueberriesCropBlock;
 import org.oxideve.cookify.block.custom.DeseederBlock;
 import org.oxideve.cookify.block.custom.FloraReactorBlock;
 import org.oxideve.cookify.item.ModItems;
@@ -25,6 +26,9 @@ public class ModBlocks {
             () -> new DeseederBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> FLORA_REACTOR = registerBlock("flora_reactor",
             () -> new FloraReactorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
+            () -> new BlueberriesCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
