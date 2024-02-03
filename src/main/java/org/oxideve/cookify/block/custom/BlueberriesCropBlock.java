@@ -11,8 +11,8 @@ import org.oxideve.cookify.item.ModItems;
 
 public class BlueberriesCropBlock extends CropBlock {
 
-    public static final int MAX_AGE = 5;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
+    public static final int MAX_AGE = 3;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
     public BlueberriesCropBlock(Properties pProperties) {
         super(pProperties);
@@ -24,7 +24,7 @@ public class BlueberriesCropBlock extends CropBlock {
     }
 
     @Override
-    protected IntegerProperty getAgeProperty() {
+    public IntegerProperty getAgeProperty() {
         return AGE;
     }
 
