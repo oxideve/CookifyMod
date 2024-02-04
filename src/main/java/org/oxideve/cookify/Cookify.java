@@ -19,6 +19,7 @@ import org.oxideve.cookify.item.ModItems;
 import org.oxideve.cookify.recipe.ModRecipes;
 import org.oxideve.cookify.screen.DeseederScreen;
 import org.oxideve.cookify.screen.FloraReactorScreen;
+import org.oxideve.cookify.screen.InductionCookerScreen;
 import org.oxideve.cookify.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
@@ -73,6 +74,7 @@ public class Cookify
         {
             MenuScreens.register(ModMenuTypes.DESEEDER_MENU.get(), DeseederScreen::new);
             MenuScreens.register(ModMenuTypes.FLORA_REACTOR_MENU.get(), FloraReactorScreen::new);
+            MenuScreens.register(ModMenuTypes.INDUCTIONCOOKER_MENU.get(), InductionCookerScreen::new);
 
         }
     }

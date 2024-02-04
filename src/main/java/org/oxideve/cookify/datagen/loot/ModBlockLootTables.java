@@ -25,6 +25,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.DESEEDER.get());
         this.dropSelf(ModBlocks.FLORA_REACTOR.get());
+        this.dropSelf(ModBlocks.INDUCTIONCOOKER.get());
 
         LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.BLUEBERRY_CROP.get())

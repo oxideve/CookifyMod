@@ -21,6 +21,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<FloraReactorMenu>> FLORA_REACTOR_MENU =
             registerMenuTypes("flora_reactor_menu", FloraReactorMenu::new);
 
+    public static final RegistryObject<MenuType<InductionCookerMenu>> INDUCTIONCOOKER_MENU =
+            registerMenuTypes("inductioncooker_menu", InductionCookerMenu::new);
+
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuTypes(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

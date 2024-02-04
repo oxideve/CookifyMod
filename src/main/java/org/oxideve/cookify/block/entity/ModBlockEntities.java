@@ -22,6 +22,11 @@ public class ModBlockEntities{
                     BlockEntityType.Builder.of(FloraReactorBlockEntity::new,
                             ModBlocks.FLORA_REACTOR.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<InductionCookerBlockEntity>> INDUCTIOCOOKER_BE =
+            BLOCK_ENTITIES.register("inductioncooker_be", () ->
+                    BlockEntityType.Builder.of(InductionCookerBlockEntity::new,
+                            ModBlocks.INDUCTIONCOOKER.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

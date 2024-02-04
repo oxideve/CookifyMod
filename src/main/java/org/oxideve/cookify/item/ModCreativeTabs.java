@@ -34,6 +34,7 @@ public class ModCreativeTabs {
 
                         pOutput.accept(ModBlocks.DESEEDER.get());
                         pOutput.accept(ModBlocks.FLORA_REACTOR.get());
+                        pOutput.accept(ModBlocks.INDUCTIONCOOKER.get());
 
 
                     })

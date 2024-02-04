@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "facing=north":
+    {
+      "model": "cookify:block/inductioncooker",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "cookify:block/inductioncooker",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cookify:block/inductioncooker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cookify:block/inductioncooker",
+      "y": 270
+    }
+  }
+}
