@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import org.oxideve.cookify.block.ModBlocks;
 import org.oxideve.cookify.block.custom.BlueberriesCropBlock;
+import org.oxideve.cookify.block.custom.TomatoCropBlock;
 import org.oxideve.cookify.item.ModItems;
 
 import java.util.Set;
@@ -31,6 +32,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.BLUEBERRY_CROP.get(), createCropDrops(ModBlocks.BLUEBERRY_CROP.get(), ModItems.BLUEBERRY.get(),
                 ModItems.BLUEBERRY_SEEDS.get(), lootitemcondition$builder));
+
+        LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.TOMATO_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoCropBlock.AGE, 9));
+
+        this.add(ModBlocks.TOMATO_CROP.get(), createCropDrops(ModBlocks.TOMATO_CROP.get(), ModItems.TOMATO.get(),
+                ModItems.TOMATO_SEEDS.get(), lootitemcondition$builder2));
     }
 
 

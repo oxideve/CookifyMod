@@ -24,8 +24,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds", //2blocks
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds", //simplecrop
+            () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> ORANGE_SEEDS = ITEMS.register("orange_seeds",
             () -> new Item(new Item.Properties()));
 

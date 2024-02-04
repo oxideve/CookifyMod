@@ -5,6 +5,7 @@ import org.oxideve.cookify.Cookify;
 import org.oxideve.cookify.block.custom.BlueberriesCropBlock;
 import org.oxideve.cookify.block.custom.DeseederBlock;
 import org.oxideve.cookify.block.custom.FloraReactorBlock;
+import org.oxideve.cookify.block.custom.TomatoCropBlock;
 import org.oxideve.cookify.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
             () -> new BlueberriesCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> TOMATO_CROP = BLOCKS.register("tomato_crop",
+            () -> new TomatoCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
